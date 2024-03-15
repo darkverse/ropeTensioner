@@ -1,2 +1,2 @@
 # ropeTensioner
-Rope Tensioner for Maritime Ropes
+Tensioner for Marine Ropes
