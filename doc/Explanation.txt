@@ -1,0 +1,33 @@
+Andrew,
+
+
+rev2 is attached. It has the autopause feature implemented.
+
+
+Here is how it works (and it's subject to change if you deem it necessary).
+1. A minimum load has to be measured by the system before the autopause feature is armed (i.e. before "autopause" even becomes an option).
+2. Once autopause is armed, if the measured load falls below the autopause threshold, the system will be forced to the pause mode (relay off).
+3. Once in the pause state, the system behaves exactly as it does now. An operator has to push the pause button to unpause the system (there is no autoUNpause).
+
+
+The autopause arm and trigger thresholds can be adjusted by changing these two values in the program (all #define statements are at the top of the program):
+
+
+#define AUTOPAUSE_ARM_THRESHOLD 51
+#define AUTOPAUSE_THRESHOLD 50
+
+
+The values are in kg, and with the #define values above, here's how it will work: Autopause will be armed the first time the measured load is at least 51kg. Once armed, if the measured load falls below 50kg, autopause will force the system to the paused state.
+
+
+Are you comfortable changing the values? If 250kg needs to be the arming threshold, and 50kg is the trip point, the two lines in the program will be:
+
+
+#define AUTOPAUSE_ARM_THRESHOLD 250
+#define AUTOPAUSE_THRESHOLD 50
+
+Please let me know whether or not this fits the bill.
+
+
+Best regards,
+Chris
